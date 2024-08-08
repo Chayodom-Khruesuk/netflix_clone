@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../barrel.dart';
 
 class PageViewPage extends StatelessWidget {
@@ -9,53 +8,56 @@ class PageViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(192, 10, 1, 41),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 50),
-        child: Stack(
-          children: [
-            PageView(
-              children: const [
-                MainPageView(),
-                PageViewPackage(),
-                PageViewOnline(),
-                PageViewWatch()
+      body: Stack(
+        children: [
+          PageView(
+            children: const [
+              MainPageView(),
+              PageViewPackage(),
+              PageViewOnline(),
+              PageViewWatch()
+            ],
+          ),
+          Positioned(
+            top: 50,
+            left: 0,
+            right: 0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset(logonetflix, width: 90),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'ความเป็นส่วนตัว',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'เข้าสู่ระบบ',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.settings),
+                ),
               ],
             ),
-            Container(
-              alignment: Alignment.topCenter,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(logonetflix, width: 90),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'ความเป็นส่วนตัว',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'เข้าสู่ระบบ',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.settings),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              alignment: Alignment.bottomCenter,
-              margin: const EdgeInsets.only(bottom: 40),
+          ),
+          Positioned(
+            bottom: 40,
+            left: 0,
+            right: 0,
+            child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    shape: const ContinuousRectangleBorder(),
-                    minimumSize: const Size(350, 60),
-                    backgroundColor: const Color.fromARGB(255, 150, 13, 3)),
+                  shape: const ContinuousRectangleBorder(),
+                  minimumSize: const Size(350, 60),
+                  backgroundColor: const Color.fromARGB(255, 150, 13, 3),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -68,8 +70,8 @@ class PageViewPage extends StatelessWidget {
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
